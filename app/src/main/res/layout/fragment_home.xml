@@ -52,16 +52,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:listitem="@layout/currency_item" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="110dp"
@@ -79,4 +69,363 @@
         android:src="@drawable/sell"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/lightBlue"
+        app:menu="@menu/bottom_nav"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="409dp"
+        android:layout_height="467dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/usd"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/eur"
+                    app:layout_constraintStart_toStartOf="@+id/imageView6"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/c"
+                    app:layout_constraintStart_toStartOf="@+id/imageView11"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/btc"
+                    app:layout_constraintStart_toStartOf="@+id/imageView12"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/eth"
+                    app:layout_constraintStart_toStartOf="@+id/imageView12"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/ga"
+                    app:layout_constraintStart_toStartOf="@+id/imageView13"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/gag"
+                    app:layout_constraintStart_toStartOf="@+id/imageView8"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/gbp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/xu100"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+                <TextView
+                    android:id="@+id/tv_usd_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvUsdSell"
+                    app:layout_constraintStart_toEndOf="@+id/imageView6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvUsdSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEurSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEurBuy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUsdSell"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/tvEurBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="16dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_usd_buy" />
+
+                <TextView
+                    android:id="@+id/tvCBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView8"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGaBuy" />
+
+                <TextView
+                    android:id="@+id/tvGbpBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="16dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView11"
+                    app:layout_constraintStart_toEndOf="@+id/imageView13"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEurBuy" />
+
+                <TextView
+                    android:id="@+id/tvGbpSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvGbpBuy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEurSell"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/tvGaBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="48dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView11"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGbpBuy" />
+
+                <TextView
+                    android:id="@+id/tvGaSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGbpSell" />
+
+                <TextView
+                    android:id="@+id/tvCSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGaSell" />
+
+                <TextView
+                    android:id="@+id/tvGagBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="48dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView12"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCBuy" />
+
+                <TextView
+                    android:id="@+id/tvGagSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCSell" />
+
+                <TextView
+                    android:id="@+id/tvBtcBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="48dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView9"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGagBuy" />
+
+                <TextView
+                    android:id="@+id/tvBtcSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGagSell" />
+
+                <TextView
+                    android:id="@+id/tvEthBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="52dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView10"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBtcBuy" />
+
+                <TextView
+                    android:id="@+id/tvEthSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBtcSell" />
+
+                <TextView
+                    android:id="@+id/tvXuBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="48dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView10"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEthBuy" />
+
+                <TextView
+                    android:id="@+id/tvXuSell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TextView"
+                    android:textColor="#ECECEC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEthSell" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
