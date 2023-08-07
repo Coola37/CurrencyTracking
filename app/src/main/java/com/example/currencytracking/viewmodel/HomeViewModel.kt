@@ -1,4 +1,6 @@
 package com.example.currencytracking.viewmodel
 
-class HomeViewModel {
+import android.app.Application
+
+class HomeViewModel(application: Application) : BaseViewModel(application) {
 }
