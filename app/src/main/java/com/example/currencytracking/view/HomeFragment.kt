@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.currencytracking.R
 import com.example.currencytracking.databinding.FragmentHomeBinding
 import com.example.currencytracking.viewmodel.HomeViewModel
@@ -51,6 +52,32 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
             }
         })
-    }
 
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        })
+
+        binding.bottomNavigationViewHome.setOnNavigationItemReselectedListener {
+            when(it.itemId){
+
+                R.id.ic_action_home -> {
+                        viewModel.refreshExchangeData()
+                    false
+                }
+                R.id.ic_action_convert -> {
+                    Log.e("convert","click")
+                    findNavController().navigate(R.id.action_homeFragment_to_convertFragment)
+                    false
+                }
+
+                else -> false
+            }
+        }
+        val menuItem = binding.bottomNavigationViewHome.menu.getItem(0)
+        menuItem.isChecked = true
+
+        binding.imageViewRefresh.setOnClickListener {
+            viewModel.refreshExchangeData()
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.currencytracking.repo
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.currencytracking.model.Exchange
 import com.example.currencytracking.retrofit.API
