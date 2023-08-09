@@ -71,4 +71,30 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.4.0'
 
+    // Mockito for mocking objects
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+
+    // Coroutine test dependencies
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
+
+    // LiveData testing
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+    // AndroidX Test Core
+    testImplementation 'androidx.test:core:1.4.0'
+
+    // AndroidX Test rules
+    testImplementation 'androidx.test:rules:1.4.0'
+
+    // AndroidX Test Runner
+    testImplementation 'androidx.test:runner:1.4.0'
+
+    // AndroidX Test Espresso Core
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // AndroidX Test Espresso Intents (if needed)
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+
+
+
 }
