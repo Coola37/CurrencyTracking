@@ -14,7 +14,7 @@ Retrofit </p>
 Viewmodel </p>
 Livedata</p>
 Room</p>
-Lifecyucle</p>
+Lifecycle</p>
 Hilt</p>
 Navigation</p>
 Retrofit</p>
